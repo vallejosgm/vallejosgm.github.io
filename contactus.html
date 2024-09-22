@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class='home'>
+    <header class='home'>
+        <img src="img/utah-logo.png" alt="Utah State Logo">
+        <h1>UTAH CONTACT US</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="saltlakecity.html">Salt Lake City</a></li>
+            <li><a href="parkcity.html">Park City</a></li>
+            <li><a href="moab.html">Moab</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class='contactus'>
+        <form id="contactForm" action="#">
+            <table class="contact-table">
+                <tr>
+                    <td><label for="firstName">First Name:</label></td>
+                    <td><input type="text" id="firstName" name="firstName" required></td>
+                </tr>    
+                <tr>
+                    <td><label for="lastName">Last Name:</label></td>
+                    <td><input type="text" id="lastName" name="lastName" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="confirmEmail">Confirm Email:</label></td>
+                    <td><input type="email" id="confirmEmail" name="confirmEmail" required></td>
+                </tr>
+                <tr>
+                    <td><label for="question">Ask a Question:</label></td>
+                    <td><textarea id="question" name="question" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan=2><button type="submit">Submit</button></td>
+                </tr> 
+            </table>  
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Utah State Website</p>
+        <p class="right-img">All images on this website were generated using artificial intelligence based on data provided by the author.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
