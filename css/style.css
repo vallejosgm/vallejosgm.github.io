@@ -1,0 +1,281 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4c302;
+  color: #333;
+  margin: 15px;
+  padding: 0;
+}
+
+body.home {
+  background-color: #f4c302;
+}
+
+body.city {
+  background-color: #012560;
+}
+
+/* Header */
+header {
+  background-color: #02245f;
+  color: #f4c302;
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+header.home {
+  background-color: #02245f;
+  color: #f4c302;
+}
+
+header.city {
+  background-color: #f4c302;
+  color: #a4163c;
+}
+
+header img {
+  width: 30%;
+  max-width: 200px;
+}
+
+header h1{
+  width: 80%;
+  text-align: center;
+  position: relative;
+}
+
+header h1::after {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  left: 10%;
+  width: 80%;
+  height: 7px;
+  background-color: #f4c400;
+}
+
+header.home h1::after{
+  background-color: #f4c400;
+}
+
+header.city h1::after{
+  background-color: #e4163c;
+}
+
+/* Navigation */
+nav {
+  background-color: #a4163c;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+}
+
+nav ul li{
+  width: 25%;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  color: #f4c400;
+  background-color: #012561;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  width: 70%;
+}
+
+nav a:hover {
+  background-color: #eebf00;
+  color: #012561;
+}
+
+/* Main content section */
+.principal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Main content area */
+.sectionside {
+  flex: 2;
+  background-color: #a4163c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+  padding: 15px;
+  color: #f4c302;
+}
+
+#sectionsideright{
+  margin: 0 0 0 10px;
+}
+
+.sectionside h2 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.sectionside img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.sectionside p {
+  line-height: 1.8;
+  padding: 14px;
+  text-align: justify;
+}
+
+.utah-data{
+  font-size: 13px;
+}
+
+.data-table{
+  padding: 5px;
+}
+
+/* Aside section */
+aside {
+  flex: 1;
+  padding: 10px 5px 10px 35px;
+  font-size: 1.1em;
+  
+}
+
+aside.home{
+  background-color: #012560;
+  color: #f4c302;
+  float: right;
+}
+
+aside.city{
+  background-color: #f4c302;
+  color: #a4163c;
+  float: left;
+}
+
+aside ul {
+  padding: 10 18px;
+}
+
+aside ol li{
+  padding: 15px;
+}
+
+aside ul li{
+  padding: 6px;
+}
+
+aside ul li a{
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+/*Table*/
+.tdsuperior{
+  border-bottom: solid 2px #f4c302;
+  padding-bottom: 23px;
+}
+
+.td-middle{
+  width: 60%;
+}
+
+.trinferior td{
+  padding: 15px;
+  width: 33%;
+}
+
+.trinferior img{
+  margin-bottom: 0;
+}
+
+.right-img{
+  font-size: 9px;
+  line-height: 1;
+}
+
+.contactus {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #022460;
+  color: #f4c400;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-table{
+  margin: 0 auto;
+}
+
+.contact-table td{
+  padding: 20px 20px 20px 0;
+}
+
+input[type="text" i], input[type="email" i] {
+  height: 30px;
+  width: 100%;
+}
+
+button[type="submit"]{
+  width: 100%;
+  height: 30px;
+  background-color: #a4163c;
+  color: #f4c400;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #f4c400;
+  color: #a4163c;
+}
+
+/* Footer */
+footer {
+  background-color: #012561;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  background-color: #f4c400;
+  color: #a4163c;
+}
