@@ -1,0 +1,310 @@
+/* =========================
+   Base
+========================= */
+
+:root {
+  --bg: #0b1120;
+  --surface: #111827;
+  --surface-light: #1f2937;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-dark: #0284c7;
+  --border: #334155;
+  --max-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: var(--muted);
+}
+
+section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 24px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 17, 32, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > a {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+nav div {
+  display: flex;
+  gap: 24px;
+}
+
+nav div a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+nav div a:hover {
+  color: var(--accent);
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+#home {
+  min-height: 82vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#home > p:first-child {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 18px;
+}
+
+#home h1 {
+  max-width: 850px;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  margin-bottom: 24px;
+}
+
+#home h1 + p {
+  max-width: 700px;
+  font-size: 1.25rem;
+  margin-bottom: 38px;
+}
+
+#home a,
+#contact a {
+  display: inline-block;
+  padding: 13px 22px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+#home a:first-of-type,
+#contact a:first-of-type {
+  background: var(--accent);
+  color: #07111f;
+}
+
+#home a:hover,
+#contact a:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: white;
+}
+
+
+/* =========================
+   About
+========================= */
+
+#about p {
+  max-width: 800px;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+
+/* =========================
+   Projects
+========================= */
+
+#projects article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  padding: 32px;
+  margin-bottom: 24px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#projects article:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+#projects h3 {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+#projects article p {
+  margin-bottom: 14px;
+}
+
+#projects article p:nth-of-type(2) {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+#projects article a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+#projects article a:hover {
+  color: var(--accent);
+}
+
+
+/* =========================
+   Skills
+========================= */
+
+#skills h3 {
+  color: var(--accent);
+  margin-top: 26px;
+  margin-bottom: 8px;
+}
+
+#skills p {
+  font-size: 1.1rem;
+}
+
+
+/* =========================
+   Experience / Education
+========================= */
+
+#experience article,
+#education article {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+#experience h3,
+#education h3 {
+  margin-bottom: 8px;
+}
+
+
+/* =========================
+   Contact
+========================= */
+
+#contact {
+  padding-bottom: 120px;
+}
+
+#contact p {
+  max-width: 700px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 24px;
+  text-align: center;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 800px) {
+
+  nav div {
+    display: none;
+  }
+
+  section {
+    padding: 75px 20px;
+  }
+
+  #home {
+    min-height: 75vh;
+  }
+
+  #home h1 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+  }
+
+  #home h1 + p {
+    font-size: 1.1rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+}
