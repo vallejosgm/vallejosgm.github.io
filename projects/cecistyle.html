@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CeciStyle Operations Platform case study by Gean Vallejos — a real-world Laravel business operations system for booking, inventory, payments, production planning, and garment tracking.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>CeciStyle Operations Platform | Gean Vallejos</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="../index.html">Gean Vallejos</a>
+      <div>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <p>FULL-STACK CASE STUDY</p>
+      <h1>CeciStyle Operations Platform</h1>
+      <p>
+        A production business operations system built for a real alterations and design business,
+        connecting customer-facing scheduling with internal workflows for inventory, payments,
+        production planning, and garment tracking.
+      </p>
+      <p><strong>PHP · Laravel · MySQL · JavaScript · REST APIs · Square SDK · AWS/S3</strong></p>
+      <p>
+        <a href="https://github.com/vallejosgm/cecistyle-operations-platform" target="_blank" rel="noopener noreferrer">View Engineering Repository</a>
+        · <a href="../index.html#projects">Back to Portfolio</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        CeciStyle Operations Platform is an evolving production system developed around the operational
+        needs of an alterations and design business. The application centralizes workflows that would
+        otherwise be distributed across appointments, customer records, inventory, payments, garment
+        intake, production planning, and physical garment tracking.
+      </p>
+      <p>
+        My work focuses on translating real business processes into maintainable software: understanding
+        how staff actually work, identifying operational risks and repetitive tasks, modeling the required
+        data, and building connected workflows around those requirements.
+      </p>
+    </section>
+
+    <section>
+      <h2>The Business Problem</h2>
+      <p>
+        An alterations business has to coordinate much more than appointments. Staff need to maintain
+        customer identity, garments, requested work, payments, deadlines, production capacity, media
+        permissions, physical locations, and pickup status. When these records live in disconnected tools
+        or manual processes, operational context can be lost and avoidable scheduling, payment, or
+        garment-tracking errors can occur.
+      </p>
+      <p>
+        The goal of the platform is to turn those separate activities into connected, traceable business
+        workflows.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I Built</h2>
+      <article>
+        <h3>Booking & Scheduling</h3>
+        <p>Availability-driven public appointment booking with validation, controlled scheduling, and clear confirmation workflows.</p>
+      </article>
+      <article>
+        <h3>Alteration Operations</h3>
+        <p>Multi-garment alteration orders connecting customers, requested work, payment state, media permissions, production milestones, workload, and garment details.</p>
+      </article>
+      <article>
+        <h3>Production Capacity Planning</h3>
+        <p>Production workload is translated into visible capacity percentages so constrained dates can be identified before additional work is accepted or assigned.</p>
+      </article>
+      <article>
+        <h3>Inventory & Barcode Tracking</h3>
+        <p>Permanent inventory identifiers, barcode-assisted lookup, status, condition, location, images, and audit metadata support traceable physical inventory handling.</p>
+      </article>
+      <article>
+        <h3>Payments & Square Integration</h3>
+        <p>Square payment synchronization and payment-to-work matching connect external payment activity to internal operational records with transactional business rules.</p>
+      </article>
+      <article>
+        <h3>Garment Tracking</h3>
+        <p>Work tickets, location events, and chain-of-custody history keep physical garments connected to their operational records throughout production.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>System Architecture</h2>
+      <p>
+        The system follows Laravel conventions while organizing larger business capabilities into
+        domain-oriented modules. Controllers coordinate HTTP workflows, Form Requests validate input,
+        service classes encapsulate business logic, Eloquent models represent the domain, and database
+        transactions protect multi-record operations.
+      </p>
+      <pre><code>Blade / JavaScript interfaces
+            ↓
+Controllers + Form Requests
+            ↓
+Domain Services + Strategies
+            ↓
+Eloquent Models + Transactions
+            ↓
+MySQL · Square · Laravel Filesystem · PDF generation</code></pre>
+    </section>
+
+    <section>
+      <h2>Engineering Highlights</h2>
+      <article>
+        <h3>Strategy Pattern for Customer Identity</h3>
+        <p>
+          Booking contact information can create ambiguous identity situations when email and phone data
+          point to different customer records. Instead of silently merging records, the workflow uses a
+          common strategy contract and explicit resolution paths for supported conflict scenarios.
+        </p>
+      </article>
+      <article>
+        <h3>Transactional Alteration Workflows</h3>
+        <p>
+          Alteration orders span multiple related operational records. Service-layer transaction boundaries
+          keep creation and updates consistent when one business action affects several database entities.
+        </p>
+      </article>
+      <article>
+        <h3>Payment Matching Integrity</h3>
+        <p>
+          Payment matching incorporates transaction handling, row locking, ownership checks, reuse
+          prevention, and amount validation to reduce the risk of connecting the wrong payment to work.
+        </p>
+      </article>
+      <article>
+        <h3>Operational Security Controls</h3>
+        <p>
+          The application uses authenticated sessions, role-based access controls, request validation,
+          throttling, employee account controls, and no-store responses for administrative workflows.
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Testing & Reliability</h2>
+      <p>
+        At the merge point of the integrated Alteration Operations release, the production repository
+        reported <strong>53 passing tests and 219 assertions</strong>. This is a historical verification
+        point for that release rather than a code-coverage claim or a guarantee about later commits.
+      </p>
+      <p>
+        The public engineering repository intentionally contains selected, sanitized evidence rather than
+        the complete production test suite or proprietary application source.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technology</h2>
+      <p>
+        PHP 8.2+ · Laravel 12 · MySQL · Blade · JavaScript · Vite · PHPUnit · Square SDK ·
+        Laravel Filesystem with S3 driver support · DomPDF · html5-qrcode
+      </p>
+    </section>
+
+    <section>
+      <h2>What This Project Demonstrates</h2>
+      <p>
+        This project demonstrates my ability to work beyond isolated features and build software around a
+        real operating business. It combines requirements analysis, relational data modeling, backend and
+        frontend development, third-party integrations, transactional workflows, security controls, testing,
+        and ongoing production maintenance.
+      </p>
+      <p>
+        The complete production repository remains private. The public repository is a sanitized,
+        documentation-first engineering showcase containing selected architecture, screenshots, case studies,
+        tests, and representative code patterns without customer data, credentials, production configuration,
+        or the complete proprietary codebase.
+      </p>
+      <p>
+        <a href="https://github.com/vallejosgm/cecistyle-operations-platform" target="_blank" rel="noopener noreferrer">Explore the Engineering Repository</a>
+        · <a href="../index.html">Return to Gean Vallejos Portfolio</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Gean Vallejos</p>
+  </footer>
+</body>
+</html>
